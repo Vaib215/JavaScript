@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <style>
+        body {
+            max-width: 480px;
+            padding: 1em;
+            margin-inline: auto;
+            overflow: hidden;
+        }
+
+        form {
+            display: flex;
+            gap: 1em;
+        }
+
+        button {
+            width: max-content;
+        }
+
+        ul{
+            overflow-y: auto;
+            padding: 0.25em;
+            max-height: 50vh;
+        }
+
+        ul li {
+            list-style: none;
+            display: flex;
+            row-gap: 0.5em;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        li span{
+            overflow-wrap: anywhere;
+            display: flex;
+            align-items: center;
+        }
+        .button-wrapper {
+            display: flex;
+            gap: 1em;
+            align-items: center;
+        }
+
+        .button-wrapper button {
+            padding: 0.25em 1em;
+            margin-bottom: auto;
+        }
+
+        .completed {
+            text-decoration: line-through;
+        }
+    </style>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <h1>Todo App</h1>
+        <form>
+            <input placeholder="Add a new Todo" />
+            <button id="submitBtn" role="button" type="submit">Add</button>
+        </form>
+        <ul>
+            <li>
+                <span>
+                    <input type="checkbox" />
+                    <span>Learn HTML</span>
+                </span>
+                <span class="button-wrapper">
+                    <button class="secondary">Edit</button>
+                    <button class="contrast">Delete</button>
+                </span>
+            </li>
+        </ul>
+    </main>
+</body>
+
+</html>
