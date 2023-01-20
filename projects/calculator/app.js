@@ -79,7 +79,7 @@ const handleInput = btn => {
         display.value = ""
     else if (btn.classList.contains("delete")) 
         display.value = display.value.slice(0, -1)
-    else if(oprts.indexOf(display.value.slice(-1)[0])!==-1 || display.value.slice(-1)[0]==="." && oprts.indexOf(btn.innerHTML)!==-1)
+    else if((oprts.indexOf(display.value.slice(-1)[0])!==-1 || display.value.slice(-1)[0]===".") && oprts.indexOf(btn.innerHTML)!==-1)
         display.value = display.value.slice(0, -1) + btn.innerHTML
     else display.value += btn.innerHTML
 }
