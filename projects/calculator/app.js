@@ -73,13 +73,14 @@ const infixEval = exp => {
 
 const handleInput = btn => {
     const oprts = "-+*/^"
+    const displayLast = display.value.slice(-1)[0]
     if(display.value==="" && oprts.indexOf(btn.innerHTML)!==-1) 
         display.value = ""
     else if (btn.classList.contains("clear")) 
         display.value = ""
     else if (btn.classList.contains("delete")) 
         display.value = display.value.slice(0, -1)
-    else if((oprts.indexOf(display.value.slice(-1)[0])!==-1 || display.value.slice(-1)[0]===".") && oprts.indexOf(btn.innerHTML)!==-1)
+    else if((oprts.indexOf(displayLast)!==-1 || displayLast===".") && oprts.indexOf(btn.innerHTML)!==-1)
         display.value = display.value.slice(0, -1) + btn.innerHTML
     else display.value += btn.innerHTML
 }
@@ -87,6 +88,7 @@ const handleInput = btn => {
 const handleEvent = e => {
     const selectedButton = Array.from(buttons).filter(btn => btn === e.target)[0]
     if (selectedButton && selectedButton.classList.contains('equal')) {
+        if(isNan(display.value.slice(0,-1))) display.value = display.slice(0,-1)
         const result = infixEval(display.value)
         display.value =  result===Math.floor(result) ? result: result.toFixed(4)
     }
