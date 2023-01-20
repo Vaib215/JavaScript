@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body{
+    max-width: 400px;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+#calculator{
+    background: #00000030;
+    padding: 0.25em 2em;
+    border-radius: 0.5em;
+}
+
+header,h1{
+    margin-bottom: 0.25em;
+}
+
+#display {
+    font-size: 2em;
+    padding: 1.5em 0.25em;
+    font-family: 'Orbitron', sans-serif;
+    text-align: right;
+}
+
+.grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1em;
+    height: 50vh;
+}
+
+.grid img {
+    scale: 0.8;
+}
+
+.grid div{
+    background: #ffffff10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    border-radius: 0.25em;
+    user-select: none;
+}
+
+.grid div:hover{
+    background: #ffffff20;
+    cursor: pointer;
+}
+
+.grid div:active{
+    background: #00000050;
+}
+
+.grid div.equal {
+    grid-row: span 2;
+    background-color: rgb(154, 42, 42);
+}
+
+.grid div img{
+    pointer-events: none;
+}
+
+.grid div.equal:hover{
+    background-color: rgb(154, 42, 42, 0.8);
+}
+
+.grid div.equal:active{
+    background-color: rgb(154, 42, 42, 0.6);
+}
