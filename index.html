@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bol De</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <style>
+        body{
+            text-align: center;
+            padding: 2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        span {
+            display: flex;
+            width: 100%;
+            gap: 1em;
+        }
+        h1{
+            margin-bottom: 0;
+        }
+    </style>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1>Bol De</h1>
+    <h3>Not listening... Click on the mic button to start...</h3>
+    <textarea name="para" id="para" cols="30" rows="10" placeholder="Speak something to see the magic..."></textarea>
+    <span><select id="select"></select><button id="copy">Copy text</button><button id="clear">Clear text</button></span>
+    <button id="btn"><img width="24" src="https://img.icons8.com/material-rounded/48/ffffff/microphone.png"/>
+        Start Listening</button>
+</body>
+</html>
