@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTT</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <style>
+        body{
+            padding: 4em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            gap: 2em;
+        }
+        .game-container {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr);
+            height: 50vmin;
+            width: 50vmin;
+            gap: 0.5em;
+            background: white;
+        }
+        .game-cell{
+            background: #11191f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+        }
+        button{
+            width: min-content;
+        }
+    </style>
+    <script src="game.js" defer></script>
+</head>
+<body>
+    <h1>TTT</h1>
+    <div class="game-container">
+        <div class="game-cell game-cell-1"></div>
+        <div class="game-cell game-cell-2"></div>
+        <div class="game-cell game-cell-3"></div>
+        <div class="game-cell game-cell-4"></div>
+        <div class="game-cell game-cell-5"></div>
+        <div class="game-cell game-cell-6"></div>
+        <div class="game-cell game-cell-7"></div>
+        <div class="game-cell game-cell-8"></div>
+        <div class="game-cell game-cell-9"></div>
+    </div>
+    <button id="reset">Restart</button>
+</body>
+</html>
