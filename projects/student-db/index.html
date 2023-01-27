@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student DB</title>
+    <style>
+        body {
+            padding: 4em;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            margin-inline: auto;
+            gap: 2em;
+            margin: 2em;
+        }
+
+        button {
+            width: max-content;
+        }
+
+        .form-control {
+            display: flex;
+            gap: 1em;
+            align-items: center;
+        }
+
+        img {
+            height: 200px;
+        }
+        table{
+            width: 100%;
+            text-align: center;
+        }
+        
+    </style>
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <h1>Student DB</h1>
+    <form name="student-form">
+        <div class="form-control">
+            <label for="image">Upload Image</label>
+            <input type="file" id="image">
+        </div>
+        <div class="form-control">
+            <label for="name">Name</label>
+            <input type="text" id="name" required placeholder="Enter your full name">
+        </div>
+        <div class="form-control">
+            <label for="uid">UID</label>
+            <input type="text" id="uid" required placeholder="Enter your UID">
+        </div>
+        <div class="form-control">
+            <label for="sect">Section</label>
+            <input type="text" id="sect" required placeholder="Enter your Section">
+        </div>
+        <div class="form-control">
+            <label for="sect">DOB</label>
+            <input type="date" id="sect" required>
+        </div>
+        <div class="form-control">
+            <label for="gender">Gender</label>
+            <input type="radio" name="gender" id="female" value="Female">
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="male" value="Male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="neutral" value="Prefer not to say">
+            <label for="neutral">Prefer not to say</label>
+        </div>
+        <button type="submit">Submit</button>
+        <button id="reset" type="reset">Reset</button>
+    </form>
+    <table border="1">
+        <thead>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>UID</th>
+            <th>Section</th>
+            <th>DOB</th>
+            <th>Gender</th>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+
+</html>
