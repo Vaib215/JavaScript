@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,66 @@
     <title>Kora Kagaz</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.49.0/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <script src="app.js" defer></script>
+    <style>
+        img[alt="icon-delete"] {
+            pointer-events: none;
+        } 
+    </style>
 </head>
+
 <body>
-    
+    <!-- Hero -->
+    <header class="hero min-h-screen" style="background-image: url(//unsplash.it/1920/1080);">
+        <div class="hero-overlay bg-opacity-90"></div>
+        <div class="hero-content text-center text-white">
+            <div class="max-w-md">
+                <h1 class="mb-5 text-7xl font-bold">Kora Kagaz</h1>
+                <p class="mb-5 text-3xl">Revolutionize the Way You Take and Manage Notes with Kora Kagaz</p>
+                <a href="#main" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </header>
+    <!-- Todo: Create a notes organising section -->
+    <section class="min-h-screen" id="main">
+        <div class="drawer drawer-mobile">
+            <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+            <div class="drawer-content">
+                <label for="my-drawer-2" class="drawer-button lg:hidden">
+                    <img class="p-4 md:p-16 cursor-pointer" src="https://img.icons8.com/ios-filled/24/ffffff/menu.png"/>
+                </label>
+                <form id="create-sect" class="p-4 md:p-16 flex flex-col gap-8 items-start">
+                    <h2 id="sect-title" class="text-3xl">Create Notes</h2>
+                    <div class="form-control w-full">
+                        <label class="label" for="title">
+                            <span class="label-text">Title</span>
+                        </label>
+                        <input id="title" type="text" placeholder="Enter a title..." class="input input-bordered text-xl" pattern="(.|\s)*\S(.|\s)*" required/>
+                    </div>
+                    <div class="form-control w-full">
+                        <label class="label" for="content">
+                            <span class="label-text">Content</span>
+                        </label>
+                        <textarea id="content" class="textarea textarea-bordered text-xl" placeholder="Start writing your notes here..." rows="10" required></textarea>
+                    </div>
+                    <button id="btn" class="btn btn-lg btn-primary text-xl">Create</button>
+                </form>
+
+            </div>
+            <div class="drawer-side">
+                <label for="my-drawer-2" class="drawer-overlay"></label>
+                <ul id="notes" class="menu p-4 w-80 bg-base-100 text-base-content gap-4">
+                    <span class="text-3xl p-4">My Notes</span>
+                    <button id="new-note-btn" class="btn btn-primary m-4">Create new</button>
+                </ul>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
