@@ -21,7 +21,7 @@ const connect = async () => {
     })
 };
 
-app.listen(port, () => {
+app.listen({host: '0.0.0.0',port}, () => {
     connect()
     console.log(`Server running at http://localhost:${port}`);
 });

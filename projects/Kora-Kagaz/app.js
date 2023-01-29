@@ -6,8 +6,19 @@ const contentEl = document.querySelector('#content')
 const drawerToggle = document.querySelector('.drawer-toggle')
 const sectTitle = document.querySelector('#sect-title')
 const newNoteBtn = document.querySelector('#new-note-btn')
+const themeSelect = document.querySelector('#theme')
+const themes = ["Light","Dark","Cupcake","Bumblebee","Emerald","Corporate","Synthwave","retro","cyberpunk","valentine","halloween","garden","forest","aqua","lofi","pastel","fantasy","wireframe","black","luxury","dracula","cmyk","autumn","business","acid","lemonade","night","coffee","winter"]
 
 let currentNoteId = undefined
+
+const populateThemes = () => {
+    for(const theme of themes){
+        const option = document.createElement('option')
+        option.value = theme
+        option.innerHTML = theme.slice(0,1).toUpperCase() + theme.slice(1)
+        themeSelect.append(option)
+    }
+}
 
 const populateNote = async (id) => {
     const response = await fetch(`https://kora-kagaz-api.onrender.com/notes/${id}`)
@@ -111,8 +122,22 @@ const handleSubmit = (e) => {
     }
 }
 
+const changeTheme = () => {
+    if(localStorage.getItem('theme')){
+        document.querySelector('html').dataset.theme = localStorage.getItem('theme')
+    }
+}
+
+const handleThemeChange = (e) => {
+    localStorage.setItem('theme', e.target.value)
+    changeTheme()
+}
+
 refreshNotes()
+populateThemes()
+changeTheme()
 
 createForm.addEventListener('submit', handleSubmit)
 list.addEventListener('click', handleListClick)
 newNoteBtn.addEventListener('click', handleNewNoteClick)
+themeSelect.addEventListener('change', handleThemeChange)
