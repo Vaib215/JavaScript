@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShabdKosh</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.49.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./app.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="navbar bg-base-100 p-4 shadow-lg">
+                <div class="flex-1 gap-2">
+                    <img class="w-8 bg-neutral p-1 rounded-full"
+                        src="https://img.icons8.com/ios/48/ffffff/wordbook.png" />
+                    <h1 class="text-xl">ShabdKosh</h1>
+                </div>
+                <div class="flex-none gap-2">
+                    <select name="font" id="font" class="input input-bordered p-1 h-8" title="Font"></select>
+                    <select name="theme" id="theme" class="input input-bordered p-1 h-8" title="Theme"></select>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="flex flex-col gap-2 md:gap-8 max-w-3xl mx-auto p-6 md:pt-12">
+        <div class="form-control">
+            <label for="search" class="label label-text w-fit">Search</label>
+            <input class="input input-bordered inline-block w-full" type="search" name="search" id="search">
+        </div>
+        <section class="flex flex-col gap-4 w-full">
+            <section class="flex w-full justify-between items-center">
+                <div class="flex flex-col gap-2">
+                    <h2 id="word" class="text-4xl md:text-6xl font-bold">keyboard</h2>
+                    <small id="pronounce" class="text-xl">/sfsd\sdfsd/</small>
+                </div>
+                <button class="btn btn-ghost p-0 btn-sm md:btn-md rounded-full">
+                    <label class="swap swap-rotate">
+                        <input type="checkbox" />
+                        <img
+                        class="swap-on w-8 md:w-12 bg-neutral rounded-full"
+                        src="https://img.icons8.com/material-outlined/72/ffffff/play-button-circled--v1.png" />
+                        <img
+                        class="swap-off w-8 md:w-12 bg-neutral rounded-full"
+                        src="https://img.icons8.com/material-outlined/72/ffffff/circled-pause.png" />
+                    </label>
+                </button>
+            </section>
+            <section id="details" class="flex flex-col gap-8">
+                <section class="flex flex-col gap-4">
+                    <h3 class="type font-semibold text-lg">noun</h3>
+                    <h4 class="text-lg">Meaning</h4>
+                    <ul class="list-disc ml-16">
+                        <li>A random meaning here</li>
+                        <li>A random meaning here</li>
+                        <li>A random meaning here</li>
+                    </ul>
+                </section>
+                <section class="flex flex-col gap-4">
+                    <h3 class="type font-semibold text-lg">verb</h3>
+                    <h4 class="text-lg">Meaning</h4>
+                    <ul class="list-disc ml-16">
+                        <li>A random meaning here</li>
+                        <li>A random meaning here</li>
+                        <li>A random meaning here</li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>
