@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piano</title>
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      min-height: 100vh;
+    }
+    .keys{
+      display: flex;
+      height: 16em;
+      gap: 0.25em;
+      max-width: 48em;
+      position: absolute;
+      margin-inline: auto;
+      left: 0;
+      right: 0;
+      bottom: 10%;
+    }
+    .key.active{
+      scale: 1.1;
+      opacity: 0.5;
+    }
+    .key{
+      height: 100%;
+      width: 10%;
+      background: #000;
+      color:white;
+      font-size: 3em;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      opacity: 1;
+    }
+  </style>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="keys">
+    <span class="key" id="key-1"><kbd>A</kbd></span>
+    <span class="key" id="key-2"><kbd>S</kbd></span>
+    <span class="key" id="key-3"><kbd>D</kbd></span>
+    <span class="key" id="key-4"><kbd>F</kbd></span>
+    <span class="key" id="key-5"><kbd>G</kbd></span>
+    <span class="key" id="key-6"><kbd>H</kbd></span>
+    <span class="key" id="key-7"><kbd>J</kbd></span>
+    <span class="key" id="key-8"><kbd>K</kbd></span>
+    <span class="key" id="key-9"><kbd>L</kbd></span>
+    <span class="key" id="key-10"><kbd>;</kbd></span>
+    <span class="key" id="key-11"><kbd>'</kbd></span>
+  </div>
+  <audio></audio>
+</body>
+</html>
