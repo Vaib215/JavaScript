@@ -1,0 +1,27 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #232323;
+  color:white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.star-wrapper{
+  display: flex;
+  font-size: 4em;
+}
+.star::after{
+  content: '☆';
+  color: gold;
+}
+
+.star.filled::after{
+  content: '★';
+}

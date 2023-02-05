@@ -1,0 +1,32 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #fff3b0;
+  color: #540b0e;
+  gap: 1em;
+}
+
+#grid-container{
+  display: grid;
+  grid-template-columns: repeat(10,1fr);
+  width: 36em;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  gap: 0.1em;
+  padding: 0.2em;
+  background: #540b0e;
+}
+
+.grid{
+  background: var(--fill-color,white);
+  cursor: pointer;
+}
