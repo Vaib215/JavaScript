@@ -1,0 +1,60 @@
+*,*::after,*::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #14213d;
+  color: #fca311;
+  font-family: monospace;
+  gap: 2em;
+}
+
+.progress-bar{
+  height: 4em;
+  width: 32em;
+  background: #e5e5e5;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  background: #fca311;
+}
+
+.progress-bar.running::after{
+  animation: progress 3s ease-in-out 1;
+}
+
+@keyframes progress{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+button{
+  all: unset;
+  font-size: 1.5em;
+  padding: 0.75em 1.5em;
+  border: 1px solid;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover{
+  background: #fca311;
+  color: #e5e5e5
+}
