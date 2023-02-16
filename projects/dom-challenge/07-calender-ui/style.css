@@ -1,0 +1,76 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height:100vh;
+  overflow: hidden;
+  padding: 2em 0;
+  gap: 2em;
+  font-size: 1.5em;
+}
+
+#calender-container {
+  max-height: 70vh;
+  overflow-y: auto;
+  min-width: 18em;
+  padding: 2.5em 0 2.5em 1em;
+  border: 1px solid;
+  border-radius: 8px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 2em;
+  position: relative;
+}
+
+.time{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.time::before{
+  content: '';
+  background: red;
+  position: absolute;
+  right: 0;
+  width: 70%;
+  height: 2px;
+  z-index: -1;
+}
+
+#calender-container::-webkit-scrollbar {
+  all:unset;
+  background: lightgray;
+  width: 8px;
+  border-radius: 4px;
+}
+
+#calender-container::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border-radius: 8px;
+}
+
+.event{
+  position: absolute;
+  right: 0;
+  width: 65%;
+  margin-top: 0.5em;
+  top:calc(var(--top-time)*70px);
+  height: calc(var(--time-width)*74px);
+  background: var(--bg-clr);
+  color:white;
+  font-size: 0.75em;
+  border-radius: 8px;
+  padding: 0.75em;
+  border: 2px solid white;
+  cursor: pointer;
+}
